@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  bigsvc:
+    build:
+      context: ./bigsvc
+    ports:
+      - '3000:3000'
+    networks:
+      - my_network
+
+  medsvc:
+    build:
+      context: ./medsvc
+    networks:
+      - my_network
+
+  smallsvc:
+    build:
+      context: ./smallsvc
+    networks:
+      - my_network
+
+networks:
+  my_network:
